@@ -1,0 +1,21 @@
+{
+  "name": "post-engine",
+  "description": "Create post content for nick.run",
+  "author": "Nick Scipione",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:NickRun/post-engine.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-front-matter": "^1.3.0",
+    "gulp-markdown-to-json": "^0.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-pluck": "0.0.2",
+    "gulp-watch": "^4.3.5",
+    "underscore": "^1.8.3"
+  }
+}

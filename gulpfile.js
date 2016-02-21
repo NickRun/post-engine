@@ -38,9 +38,14 @@ gulp.task('markdown-meta', function() {
     .pipe(notify({ message: 'markdown-meta task complete' }));
 });
 
-// Development Tasks
+// Watch Task
 gulp.task('watch', function () {
     watch('./src/**/*', function () {
         gulp.start('markdown-meta','markdown-posts'); 
     });
+});
+
+// Build Task
+gulp.task('build', function () {
+    gulp.start('markdown-meta','markdown-posts'); 
 });

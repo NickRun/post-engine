@@ -47,7 +47,7 @@ function get_posts(posts_meta_array) {
 	_.each(posts_meta_array, function(post_meta_object){
 		var post_title_string = post_meta_object.title;
 		var post_title_slug = slugify(post_title_string);
-		var post_src = path.basename(post_meta_object.filename);
+		var post_src = path.basename(post_meta_object.filename, '.json');
 		var post_type = slugify(post_meta_object.post_type);
 		var post_publish_date = new Date(post_meta_object.publish_date);
 		var active = false;

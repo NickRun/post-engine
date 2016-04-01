@@ -20,7 +20,8 @@ gulp.task('markdown-posts', function(){
     return gulp.src('./src/**/*.md')
         .pipe(markdown({
             pedantic: true,
-            smartypants: true
+            smartypants: true,
+            highlight: true
         }))
         .pipe(gulp.dest('dist/data/posts/'))
         .pipe(notify({ message: 'markdown-posts task complete' }));

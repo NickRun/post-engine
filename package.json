@@ -17,6 +17,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-pluck": "0.0.2",
     "gulp-watch": "^4.3.5",
+    "highlight.js": "^9.2.0",
     "underscore": "^1.8.3"
   }
 }

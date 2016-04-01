@@ -21,7 +21,9 @@ gulp.task('markdown-posts', function(){
         .pipe(markdown({
             pedantic: true,
             smartypants: true,
-            highlight: true
+            highlight: function (code) {
+                return require('highlight.js').highlightAuto(code).value;
+            }
         }))
         .pipe(gulp.dest('dist/data/posts/'))
         .pipe(notify({ message: 'markdown-posts task complete' }));

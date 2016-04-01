@@ -10,10 +10,8 @@ Visibility classes are CSS selectors applied to HTML to help hide or show HTML e
 
 A simple set of visiblity classes:
 
-```
-.hide { display: none }
-.show { display: block }
-```
+	.hide { display: none }
+	.show { display: block }
 
 ### Responsive Visibility Classes
 
@@ -21,78 +19,76 @@ Responsive visibility classes hide or show HTML elements based on the width of t
 
 An advanced set of visibility classes (written in SASS):
 
-```
-// --------------------------------------------------
-// Visibility Helper Classes
-// --------------------------------------------------
+	// --------------------------------------------------
+	// Visibility Helper Classes
+	// --------------------------------------------------
 
-$xs: 480px !default;
-$sm: 768px !default;
-$md: 992px !default;
-$lg: 1200px !default;
+	$xs: 480px !default;
+	$sm: 768px !default;
+	$md: 992px !default;
+	$lg: 1200px !default;
 
-.hide {
-	display:none;
-}
+	.hide {
+		display:none;
+	}
 
-.show {
-	display:block;
-}
+	.show {
+		display:block;
+	}
 
-.#{'hide-'} {
-	// Hide >= XS breakpoint
-	&xs {
-		@media screen and (min-width: $xs) {
-			display:none!important;
+	.#{'hide-'} {
+		// Hide >= XS breakpoint
+		&xs {
+			@media screen and (min-width: $xs) {
+				display:none!important;
+			}
+		}
+		// Hide >= SM breakpoint
+		&sm {
+			@media screen and (min-width: $sm) {
+				display:none!important;
+			}
+		}
+		// Hide >= MD breakpoint
+		&md {
+			@media screen and (min-width: $md) {
+				display:none!important;
+			}
+		}
+		// Hide >= LG breakpoint
+		&lg {
+			@media screen and (min-width: $lg) {
+				display:none!important;
+			}
 		}
 	}
-	// Hide >= SM breakpoint
-	&sm {
-		@media screen and (min-width: $sm) {
-			display:none!important;
-		}
-	}
-	// Hide >= MD breakpoint
-	&md {
-		@media screen and (min-width: $md) {
-			display:none!important;
-		}
-	}
-	// Hide >= LG breakpoint
-	&lg {
-		@media screen and (min-width: $lg) {
-			display:none!important;
-		}
-	}
-}
 
-.#{'show-'} {
-	// Show >= XS breakpoint
-	&xs {
-		@media screen and (min-width: $xs) {
-			display:block!important;
+	.#{'show-'} {
+		// Show >= XS breakpoint
+		&xs {
+			@media screen and (min-width: $xs) {
+				display:block!important;
+			}
+		}
+		// Show >= SM breakpoint
+		&sm {
+			@media screen and (min-width: $sm) {
+				display:block!important;
+			}
+		}
+		// Show >= MD breakpoint
+		&md {
+			@media screen and (min-width: $md) {
+				display:block!important;
+			}
+		}
+		// Show >= LG breakpoint
+		&lg {
+			@media screen and (min-width: $lg) {
+				display:block!important;
+			}
 		}
 	}
-	// Show >= SM breakpoint
-	&sm {
-		@media screen and (min-width: $sm) {
-			display:block!important;
-		}
-	}
-	// Show >= MD breakpoint
-	&md {
-		@media screen and (min-width: $md) {
-			display:block!important;
-		}
-	}
-	// Show >= LG breakpoint
-	&lg {
-		@media screen and (min-width: $lg) {
-			display:block!important;
-		}
-	}
-}
-```
 
 ### Usage
 

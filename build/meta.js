@@ -50,18 +50,21 @@ function get_posts(posts_meta_array) {
 		var post_src = path.basename(post_meta_object.filename, '.json');
 		var post_type = slugify(post_meta_object.post_type);
 		var post_publish_date = new Date(post_meta_object.publish_date);
+		var r_post_publish_date = post_meta_object.publish_date;
 		var active = false;
 
 		if (post_meta_object.homepost == true) {
 			active = true;
 		}
 
-		if( !(_.findWhere(posts_array, {slug: post_title_slug})) ) { // check to see if value already exists (slugs will be unique, not names)
-    		posts_array.push({name: post_title_string, slug: post_title_slug, date: post_publish_date, post_type: post_type, src: post_src, terms: get_post_terms(post_meta_object), active: active});
-    	} else { // If value already exists, add integer to end
-    		var title_counter = (_.where(posts_array, {name: post_title_string})).length; // check how many titles are the same, do not check slugs
-    		posts_array.push({name: post_title_string, slug: post_title_slug+'-'+title_counter,  date: post_publish_date, post_type: post_type, src: post_src, terms: get_post_terms(post_meta_object), active: active});
-    	}
+		if( (_.findWhere(posts_array, {slug: post_title_slug})) ) { // check to see if value already exists (slugs will be unique, not names)
+    		// Alter post slug to a unique name
+    		var title_counter = (_.where(posts_array, {name: post_title_string})).length; 
+    		post_title_slug +=  '-' + title_counter;
+    	} 
+
+    	posts_array.push({name: post_title_string, slug: post_title_slug+'-'+title_counter,  date: post_publish_date, readable_date: r_post_publish_date, post_type: post_type, src: post_src, terms: get_post_terms(post_meta_object), active: active});
+
 	});
 
 	/**
@@ -215,4 +218,3 @@ function slugify(text) {
 		.replace(/^-+/, '')             // Trim - from start of text
 		.replace(/-+$/, '');            // Trim - from end of text
 }
-

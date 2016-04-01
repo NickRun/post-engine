@@ -7,7 +7,13 @@ var gulp = require('gulp'),
     data = require('gulp-data'),
     path = require('path'),
     watch = require('gulp-watch'),
-    meta = require('./build/meta.js');
+    meta = require('./build/meta.js'),
+    del = require('del');
+
+// Delete Data files
+gulp.task('clean:data', function(cb) {
+    return del(['dist/data/'],cb)
+});
 
 // Each post transformed into a JSON file
 gulp.task('markdown-posts', function(){
@@ -16,7 +22,7 @@ gulp.task('markdown-posts', function(){
             pedantic: true,
             smartypants: true
         }))
-        .pipe(gulp.dest('dist/posts/'))
+        .pipe(gulp.dest('dist/data/posts/'))
         .pipe(notify({ message: 'markdown-posts task complete' }));
 });
 
@@ -34,7 +40,7 @@ gulp.task('markdown-meta', function() {
         // file.contents = new Buffer(JSON.stringify(file.meta))
         file.contents = new Buffer(meta.convert(file.meta)); 
     }))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/data/'))
     .pipe(notify({ message: 'markdown-meta task complete' }));
 });
 
@@ -46,6 +52,6 @@ gulp.task('watch', function () {
 });
 
 // Build Task
-gulp.task('build', function () {
+gulp.task('build', ['clean:data'], function () {
     gulp.start('markdown-meta','markdown-posts'); 
 });

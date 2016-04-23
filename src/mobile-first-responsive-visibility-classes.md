@@ -4,9 +4,9 @@ post_type: notes
 publish_date: March 30, 2016
 ---
 
-### What are visibility classes?
+<h3 class="no-top-margin">What are visibility classes?</h3>
 
-Visibility classes are CSS selectors applied to HTML to help hide or show HTML elements.
+Visibility classes are applied to HTML to <span class="highlight">help hide or show HTML elements.</span>
 
 A simple set of visiblity classes:
 
@@ -92,25 +92,139 @@ An advanced set of visibility classes (written in SASS):
 
 ### Usage
 
-|                                           | < XS width | >= XS width | >= SM width | >= MD width | >= LG width |
-|-------------------------------------------|------------|-------------|-------------|-------------|-------------|
-| **.hide**                                     | Hidden     | Hidden      | Hidden      | Hidden      | Hidden      |
-|**.show**                                     | Visible    | Visible     | Visible     | Visible     | Visible     |
-| **.hide-xs**                                  | Visible    | Hidden      | Hidden      | Hidden      | Hidden      |
-| **.hide-sm**                                  | Visible    | Visible     | Hidden      | Hidden      | Hidden      |
-| **.hide-md**                                  | Visible    | Visible     | Visible     | Hidden      | Hidden      |
-| **.hide-lg**                                  | Visible    | Visible     | Visible     | Visible     | Hidden      |
-| **.hide .show-xs**                            | Hidden     | Visible     | Visible     | Visible     | Visible     |
-| **.hide .show-sm**                            | Hidden     | Hidden      | Visible     | Visible     | Visible     |
-| **.hide .show-md**                            | Hidden     | Hidden      | Hidden      | Visible     | Visible     |
-| **.hide .show-lg**                            | Hidden     | Hidden      | Hidden      | Hidden      | Visible     |
-| **.hide .show-xs .hide-sm .show-md .hide-lg** | Hidden     | Visible     | Hidden      | Visible     | Hidden      |
-| **.hide .show-sm .hide-md .show-lg**          | Hidden     | Hidden      | Visible     | Hidden      | Visible     |
-| **.hide .show-md .hide-lg**                   | Hidden     | Hidden      | Hidden      | Visible     | Hidden      |
-| **.hide .show-md .hide-lg**                   | Hidden     | Hidden      | Hidden      | Visible     | Hidden      |
-|  **.hide .show-sm .hide-md**                   | Hidden     | Hidden      | Visible     | Hidden      | Hidden      |
-| **.hide .show-xs .hide-sm**                   | Hidden     | Visible     | Hidden      | Hidden      | Hidden      |
-
-### Mobile-first logic
-
-The logic behind this approah is simple. Start developing for the mobile width first, and work your way up the width of the viewport. 
+<div class="responsive-table">
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>< XS width</th>
+				<th>>= XS width</th>
+				<th>>= SM width</th>
+				<th>>= MD width</th>
+				<th>>= LG width</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="bold">.hide</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.show</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide-xs</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide-sm</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide-md</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.hide-lg</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-xs</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-sm</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-md</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-lg</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-xs .hide-sm .show-md .hide-lg</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-sm .hide-md .show-lg</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-md .hide-lg</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-sm .hide-md</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+			</tr>
+			<tr>
+				<td class="bold">.hide .show-xs .hide-sm</td>
+				<td>Hidden</td>
+				<td><span class="highlight">Visible</span></td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+				<td>Hidden</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
